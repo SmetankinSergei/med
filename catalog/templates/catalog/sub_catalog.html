@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load sections_tags %}
+{% load catalog_tags %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/content_background.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/sub_catalog.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/pagination.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="store-window">
+    <div class="left-bar">
+        {% include 'catalog/includes/call_us.html' %}
+    </div>
+
+    <div class="scroll-container">
+        <div class="store-items">
+            {% for item in items %}
+                {% include 'catalog/includes/container_item.html' %}
+            {% endfor %}
+
+            {% if items.paginator.num_pages > 1 %}
+                {% include 'catalog/includes/pagination.html' %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

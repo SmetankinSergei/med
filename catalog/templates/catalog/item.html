@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/item.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="flex-container">
+    <div class="main-info-block">
+        <div>
+            {% block photo %}{% endblock %}
+        </div>
+
+        <div class="item-info">
+            {% block info %}{% endblock %}
+        </div>
+    </div>
+
+    <div class="right-bar">
+        {% block right_bar %}{% endblock %}
+    </div>
+</div>
+{% endblock %}

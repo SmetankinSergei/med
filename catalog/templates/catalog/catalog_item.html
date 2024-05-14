@@ -1,0 +1,25 @@
+{% extends 'catalog/item.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/item.css' %}">
+{% endblock %}
+
+{% block photo %}
+<div class="slider-container">
+    <div class="slider">
+        <div class="frame">
+             <img class="slider-photo" src="{{ item.main_photo.url }}">
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block right_bar %}
+<div class="info">
+    <div class="item-name">{{ item.name }}</div>
+    <div style="margin-bottom:0.5em;display:flex;justify-content:center;">price - {{ item.price }} EUR</div>
+
+    <div class="more-info">call us for more info</div>
+</div>
+{% endblock %}

@@ -20,8 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
-
+# SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'django-insecure-)y)h^9wq2k^$vusa=dw+unr@lcrv)y+bc&(c@sj%221-x7)ju^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'home',
     'users',
     'catalog',
-    'contacts',
 ]
 
 MIDDLEWARE = [
@@ -80,14 +79,25 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.getenv('DATABASE_ENGINE'),
+#         'NAME': os.getenv('DATABASE_NAME'),
+#         'USER': os.getenv('DATABASE_USER'),
+#         'HOST': os.getenv('DATABASE_HOST'),
+#         'PORT': os.getenv('DATABASE_PORT'),
+#         'PASSWORD': os.getenv('DATABASE_PASSWORD')
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('DATABASE_ENGINE'),
-        'NAME': os.getenv('DATABASE_NAME'),
-        'USER': os.getenv('DATABASE_USER'),
-        'HOST': os.getenv('DATABASE_HOST'),
-        'PORT': os.getenv('DATABASE_PORT'),
-        'PASSWORD': os.getenv('DATABASE_PASSWORD')
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'med_db',
+        'USER': 'postgres',
+        'HOST': '127.0.0.1',
+        'PORT': 5433,
+        'PASSWORD': 1111
     }
 }
 
